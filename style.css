@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #799278;
+}
+
+.fox-wrpper {
+  width: 600px;
+  height: 600px;
+}
+
+/* 狐狸的头 扇形 */
+.fox-head {
+  width: 0;
+  height: 0;
+  border-top: 150px solid #c66334;
+  border-left: 110px solid transparent;
+  border-right: 110px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 200px;
+  z-index: 0;
+}
+
+/* 狐狸的脸 */
+.fox-cheeks {
+  width: 165px;
+  height: 165px;
+  background-color: #e7dbc4;
+  border-top-left-radius: 80%;
+  border-bottom-right-radius: 90%;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 180px;
+  left: 128px;
+  z-index: -1
+}
+
+/* 狐狸左眼 */
+.left-eye {
+  width: 20px;
+  height: 20px;
+  background-color: #453f38;
+  border-radius: 50%;
+  position: absolute;
+  top: 280px;
+  left: 150px;
+  z-index: 2
+}
+
+.left-inner-eye {
+  width: 5px;
+  height: 5px;
+  background-color: #ccc1ad;
+  border-radius: 50%;
+  position: absolute;
+  top: 285px;
+  left: 155px;
+  z-index: 3
+}
+
+/* 狐狸右眼 */
+.right-eye {
+  width: 20px;
+  height: 20px;
+  background-color: #453f38;
+  border-radius: 50%;
+  position: absolute;
+  top: 280px;
+  left: 250px;
+  z-index: 2;
+}
+
+.right-inner-eye {
+  width: 5px;
+  height: 5px;
+  background-color: #ccc1ad;
+  border-radius: 50%;
+  position: absolute;
+  top: 285px;
+  left: 255px;
+  z-index: 3
+}
+
+.inner-eye {
+  animation: moving 8s ease-in-out infinite alternate-reverse forwards;
+}
+
+/* 鼻子 */
+.nose {
+  width: 15px;
+  height: 15px;
+  background-color: #453f38;
+  border-radius: 50%;
+  position: absolute;
+  top: 340px;
+  left: 202px;
+  z-index: 2
+}
+
+/* 耳朵 */
+.left-ear {
+  width: 0px;
+  height: 0px;
+  border-top: 70px solid #b94a09;
+  border-radius: 50%;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  position: absolute;
+  top: 165px;
+  left: 110px;
+  transform: rotate(-65deg);
+  z-index: -2;
+}
+
+.left-inner-ear {
+  width: 0px;
+  height: 0px;
+  border-top: 30px solid #e5dcc6;
+  border-radius: 50%;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  position: absolute;
+  top: 195px;
+  left: 133px;
+  transform: rotate(-65deg);
+  z-index: -2;
+
+}
+
+.right-ear {
+  width: 0px;
+  height: 0px;
+  border-top: 70px solid #b94a09;
+  border-radius: 50%;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  position: absolute;
+  top: 165px;
+  left: 210px;
+  transform: rotate(65deg);
+  z-index: -2
+}
+
+.right-inner-ear {
+  width: 0px;
+  height: 0px;
+  border-top: 30px solid #e5dcc6;
+  border-radius: 50%;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  position: absolute;
+  top: 195px;
+  left: 245px;
+  transform: rotate(65deg);
+  z-index: -2
+}
+
+.ear {
+  animation: left-ear-wave 0.5s linear infinite alternate;
+}
+
+.r-ear {
+  animation: right-ear-wave 0.5s linear infinite alternate;
+}
+
+/* 脖子 */
+.neck {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc1ad;
+  border-top-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 240px;
+  left: 135px;
+  z-index: -2
+}
+
+/* 身体 水滴形 */
+.body {
+  width: 200px;
+  height: 200px;
+  background-color: #b94a09;
+  position: absolute;
+  top: 250px;
+  left: 110px;
+  z-index: -3;
+  border-top-left-radius: 80% 55%;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 55% 80%;
+  transform: rotate(-45deg);
+}
+
+/* 尾巴 */
+.tail {
+  background-color: rgb(175, 51, 18);
+  width: 280px;
+  height: 170px;
+  border-top-left-radius: 80%;
+  border-bottom-right-radius: 90%;
+  position: absolute;
+  top: 160px;
+  left: 130px;
+  transform: skewY(-30deg) skewX(30deg) rotate(-10deg);
+  z-index: -6;
+  animation: 2s wave ease-in-out infinite alternate forwards;
+  transform-origin: bottom left;
+}
+
+
+@keyframes wave {
+  0% {
+    transform: rotate(-10deg)
+  }
+
+  100% {
+    transform: rotate(-20deg)
+  }
+}
+
+@keyframes left-ear-wave {
+  0% {
+    transform: rotate(-65deg);
+  }
+
+  100% {
+    transform: rotate(-70deg);
+  }
+}
+
+@keyframes right-ear-wave {
+  0% {
+    transform: rotate(65deg);
+  }
+
+  100% {
+    transform: rotate(70deg);
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(0) translateY(0)
+  }
+
+  25% {
+    transform: translateX(3px) translateY(-3px);
+  }
+
+  50% {
+    transform: translateX(6px) translateY(0px);
+  }
+
+  75% {
+    transform: translateX(3px) translateY(5px)
+  }
+
+  100% {
+    transform: translateX(0) translateY(0)
+  }
+}
